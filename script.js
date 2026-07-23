@@ -8,15 +8,15 @@ const board = document.getElementById("board");
 
 const pieces = {
   wp: "♙",
-  wr: "R",
+  wr: "T",
   wn: "♘",
   wb: "♗",
   wq: "♕",
   wk: "♔",
 
   bp: "♟",
-  br: "R",
-  bn: "♞",
+  br: "T",
+  bn:"♞",
   bb: "♝",
   bq: "♛",
   bk: "♚"
