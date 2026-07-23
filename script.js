@@ -162,13 +162,12 @@ function clickSquare(){
 
     // дальше идёт остальной код clickSquare()
 }
-
-////function clickSquare(){
+function clickSquare(){
 
     const row=parseInt(this.dataset.row);
 
     const col=parseInt(this.dataset.col);
-////function isWhite(piece){
+function isWhite(piece){
     return piece.startsWith("w");
 }
 
