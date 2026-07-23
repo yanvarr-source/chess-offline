@@ -1,0 +1,15 @@
+{
+  "name": "Chess Offline",
+  "short_name": "Chess",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f5f1e6",
+  "theme_color": "#222222",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+}
