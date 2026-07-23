@@ -85,7 +85,52 @@ function clickSquare(){
     const row=parseInt(this.dataset.row);
 
     const col=parseInt(this.dataset.col);
+function isWhite(piece){
+    return piece.startsWith("w");
+}
 
+function isBlack(piece){
+    return piece.startsWith("b");
+}
+
+function canMovePawn(fromRow,fromCol,toRow,toCol,piece){
+
+    const dir = piece=="wp" ? -1 : 1;
+
+    if(fromCol==toCol){
+
+        if(game[toRow][toCol]==""){
+
+            if(toRow==fromRow+dir)
+                return true;
+
+            if(piece=="wp" && fromRow==6 && toRow==4 && game[5][fromCol]=="")
+                return true;
+
+            if(piece=="bp" && fromRow==1 && toRow==3 && game[2][fromCol]=="")
+                return true;
+
+        }
+
+    }
+
+    if(Math.abs(toCol-fromCol)==1 && toRow==fromRow+dir){
+
+        if(game[toRow][toCol]!=""){
+
+            if(isWhite(piece) && isBlack(game[toRow][toCol]))
+                return true;
+
+            if(isBlack(piece) && isWhite(game[toRow][toCol]))
+                return true;
+
+        }
+
+    }
+
+    return false;
+
+}
     if(selected==null){
 
         if(game[row][col]=="") return;
