@@ -145,10 +145,26 @@ function canMovePawn(fromRow,fromCol,toRow,toCol,piece){
         return;
 
     }
-      const old = game[selected.row][selected.col];
+      const piece = game[selected.row][selected.col];
+
+let allowed = true;
+
+if(piece === "wp" || piece === "bp"){
+    allowed = canMovePawn(
+        selected.row,
+        selected.col,
+        row,
+        col,
+        piece
+    );
+}
+
+if(allowed){
 
     game[selected.row][selected.col] = "";
-    game[row][col] = old;
+    game[row][col] = piece;
+
+}
 
     selected = null;
 
