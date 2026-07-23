@@ -59,6 +59,11 @@ function drawBoard(){
             if(game[row][col]!=""){
 
                 square.textContent=pieces[game[row][col]];
+              if(game[row][col].startsWith("w")){
+    square.style.color = "white";
+}else{
+    square.style.color = "black";
+}
 
             }
 
