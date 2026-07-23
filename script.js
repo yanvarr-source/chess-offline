@@ -158,6 +158,7 @@ function canMovePawn(fromRow,fromCol,toRow,toCol,piece)
 let allowed = true;
 
 if(piece === "wp" || piece === "bp"){
+
     allowed = canMovePawn(
         selected.row,
         selected.col,
@@ -165,6 +166,16 @@ if(piece === "wp" || piece === "bp"){
         col,
         piece
     );
+
+}else if(piece === "wr" || piece === "br"){
+
+    allowed = canMoveRook(
+        selected.row,
+        selected.col,
+        row,
+        col
+    );
+
 }
 
 if(allowed){
