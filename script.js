@@ -265,6 +265,7 @@ if(allowed){
     selected = null;
 
     drawBoard();
+  setTimeout (computerMove,300);
 
 }
 
