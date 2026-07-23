@@ -93,7 +93,15 @@ function isBlack(piece){
     return piece.startsWith("b");
 }
 
-function canMovePawn(fromRow,fromCol,toRow,toCol,piece){
+function canMovePawn(fromRow,fromCol,toRow,toCol,piece)
+  function canMoveRook(fromRow, fromCol, toRow, toCol){
+
+    if(fromRow !== toRow && fromCol !== toCol)
+        return false;
+
+    return true;
+
+}{
 
     const dir = piece=="wp" ? -1 : 1;
 
