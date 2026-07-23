@@ -8,14 +8,14 @@ const board = document.getElementById("board");
 
 const pieces = {
   wp: "♙",
-  wr: "♖",
+  wr: "R",
   wn: "♘",
   wb: "♗",
   wq: "♕",
   wk: "♔",
 
   bp: "♟",
-  br: "♜",
+  br: "R",
   bn: "♞",
   bb: "♝",
   bq: "♛",
@@ -59,11 +59,8 @@ function drawBoard(){
             if(game[row][col]!=""){
 
                 square.textContent=pieces[game[row][col]];
-              if(game[row][col].startsWith("w")){
-    square.style.color = "white";
-}else{
-    square.style.color = "black";
-}
+              square.style.color = game[row][col].startsWith("w") ? "white" : "black";
+              
 
             }
 
