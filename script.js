@@ -78,14 +78,97 @@ function clearSelection(){
       .querySelectorAll(".selected")
       .forEach(s=>s.classList.remove("selected"));
 
+}function isWhite(piece){
+    return piece.startsWith("w");
+}
+
+function isBlack(piece){
+    return piece.startsWith("b");
+}
+
+function canMovePawn(fromRow,fromCol,toRow,toCol,piece){
+
+    const dir = piece=="wp" ? -1 : 1;
+
+    if(fromCol==toCol){
+
+        if(game[toRow][toCol]==""){
+
+            if(toRow==fromRow+dir)
+                return true;
+
+            if(piece=="wp" && fromRow==6 && toRow==4 && game[5][fromCol]=="")
+                return true;
+
+            if(piece=="bp" && fromRow==1 && toRow==3 && game[2][fromCol]=="")
+                return true;
+
+        }
+
+    }
+
+    if(Math.abs(toCol-fromCol)==1 && toRow==fromRow+dir){
+
+        if(game[toRow][toCol]!=""){
+
+            if(isWhite(piece) && isBlack(game[toRow][toCol]))
+                return true;
+
+            if(isBlack(piece) && isWhite(game[toRow][toCol]))
+                return true;
+
+        }
+
+    }
+
+    return false;
+
+}
+
+function canMoveRook(fromRow, fromCol, toRow, toCol){
+
+    if(fromRow !== toRow && fromCol !== toCol)
+        return false;
+
+    let stepRow = 0;
+    let stepCol = 0;
+
+    if(toRow > fromRow) stepRow = 1;
+    if(toRow < fromRow) stepRow = -1;
+
+    if(toCol > fromCol) stepCol = 1;
+    if(toCol < fromCol) stepCol = -1;
+
+    let r = fromRow + stepRow;
+    let c = fromCol + stepCol;
+
+    while(r !== toRow || c !== toCol){
+
+        if(game[r][c] !== "")
+            return false;
+
+        r += stepRow;
+        c += stepCol;
+    }
+
+    return true;
+
 }
 
 function clickSquare(){
 
+    const row = parseInt(this.dataset.row);
+    const col = parseInt(this.dataset.col);
+
+    // дальше идёт остальной код clickSquare()
+}
+
+////function clickSquare(){
+
     const row=parseInt(this.dataset.row);
 
     const col=parseInt(this.dataset.col);
-function isWhite(piece){
+////function isWhite(piece){
     return piece.startsWith("w");
 }
 
