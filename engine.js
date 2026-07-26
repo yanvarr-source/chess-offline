@@ -111,5 +111,3 @@ function computerMove() {
  sendToStockfish("uci");
 sendToStockfish("isready");
 sendToStockfish("ucinewgame");
-sendToStockfish("position startpos");
-sendToStockfish("go depth 10");
