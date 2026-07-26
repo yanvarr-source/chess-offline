@@ -259,6 +259,14 @@ if(allowed){
 
     game[selected.row][selected.col] = "";
     game[row][col] = piece;
+  const letters = "abcdefgh";
+
+moveHistory.push(
+    letters[selected.col] +
+    (8 - selected.row) +
+    letters[col] +
+    (8 - row)
+);
 
 }
 
