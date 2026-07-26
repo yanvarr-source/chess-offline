@@ -278,7 +278,7 @@ moveHistory.push(
     selected = null;
 
     drawBoard();
-  setTimeout (computerMove,300);
+  setTimeout (computerMove,1000);
 
 }
 
