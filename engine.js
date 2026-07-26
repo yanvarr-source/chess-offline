@@ -102,8 +102,8 @@ function computerMove() {
 
     drawBoard();
 }
-function testStockfish() {
-    sendToStockfish("position startpos");
-    sendToStockfish("go depth 10");
-}
-testStockfish();
+ sendToStockfish("uci");
+sendToStockfish("isready");
+sendToStockfish("ucinewgame");
+sendToStockfish("position startpos");
+sendToStockfish("go depth 10");
