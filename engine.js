@@ -1,4 +1,4 @@
-const stockfish = new Worker("stockfish/stockfish-18-asm.js");
+const stockfish = new Worker("stockfish/stockfish-18-lite.js");
 let moveHistory = [];
 
 stockfish.postMessage("uci");
