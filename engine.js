@@ -12,6 +12,16 @@ stockfish.onmessage = function(event) {
 
     if (msg.startsWith("bestmove")) {
     const move = msg.split(" ")[1];
+        const fromCol = move.charCodeAt(0) - 97;
+const fromRow = 8 - parseInt(move[1]);
+
+const toCol = move.charCodeAt(2) - 97;
+const toRow = 8 - parseInt(move[3]);
+
+game[toRow][toCol] = game[fromRow][fromCol];
+game[fromRow][fromCol] = "";
+
+drawBoard();
     console.log("Stockfish:", move);
 }
 
