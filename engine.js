@@ -102,7 +102,7 @@ function getAllMoves(color) {
 
 function computerMove() {
 
-    sendToStockfish("position startpos");
+   sendToStockfish("position startpos moves " + moveHistory.join(" "));
 
     sendToStockfish("go depth 10");
 
