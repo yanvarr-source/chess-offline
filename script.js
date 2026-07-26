@@ -157,13 +157,7 @@ function canMoveRook(fromRow, fromCol, toRow, toCol){
 
 }
 
-function clickSquare(){
 
-    const row = parseInt(this.dataset.row);
-    const col = parseInt(this.dataset.col);
-
-    // дальше идёт остальной код clickSquare()
-}
 function clickSquare(){
 
     const row=parseInt(this.dataset.row);
@@ -253,7 +247,7 @@ if(piece === "wp" || piece === "bp"){
         col
     );
 
-}
+
   }else{
 
     allowed = true;
