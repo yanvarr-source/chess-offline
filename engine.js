@@ -1,4 +1,5 @@
 const stockfish = new Worker("stockfish/stockfish-18-asm.js");
+let moveHistory = [];
 
 stockfish.postMessage("uci");
 stockfish.postMessage("isready");
