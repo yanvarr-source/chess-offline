@@ -254,6 +254,11 @@ if(piece === "wp" || piece === "bp"){
     );
 
 }
+  }else{
+
+    allowed = true;
+
+}
 
 if(allowed){
 
