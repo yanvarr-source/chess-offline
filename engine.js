@@ -90,11 +90,13 @@ function getAllMoves(color) {
 }
 
 function computerMove() {
-    const moves = getAllMoves("b");
+    sendToStockfish("position startpos");
+sendToStockfish("go depth 10");
+return;
 
     if (moves.length === 0) return;
 
-    const move = moves[Math.floor(Math.random() * moves.length)];
+    
 
     game[move.toRow][move.toCol] =
         game[move.fromRow][move.fromCol];
