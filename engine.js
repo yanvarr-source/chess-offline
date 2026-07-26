@@ -21,6 +21,7 @@ const toRow = 8 - parseInt(move[3]);
 
 game[toRow][toCol] = game[fromRow][fromCol];
 game[fromRow][fromCol] = "";
+        moveHistory.push(move);
 
 drawBoard();
     console.log("Stockfish:", move);
