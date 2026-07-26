@@ -11,8 +11,9 @@ stockfish.onmessage = function(event) {
     console.log(msg);
 
     if (msg.startsWith("bestmove")) {
-        alert(msg);
-    }
+    const move = msg.split(" ")[1];
+    console.log("Stockfish:", move);
+}
 
 };
     function sendToStockfish(command) {
