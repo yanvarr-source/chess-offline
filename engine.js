@@ -1,6 +1,8 @@
 const stockfish = new Worker("stockfish/stockfish-18-lite.js");
 
 stockfish.postMessage("uci");
+stockfish.postMessage("isready");
+stockfish.postMessage("ucinewgame");
 
 stockfish.onmessage = function(event) {
     console.log(event.data);
