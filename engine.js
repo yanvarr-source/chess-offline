@@ -5,7 +5,15 @@ stockfish.postMessage("isready");
 stockfish.postMessage("ucinewgame");
 
 stockfish.onmessage = function(event) {
-    console.log(event.data);
+
+    const msg = event.data;
+
+    console.log(msg);
+
+    if (msg.startsWith("bestmove")) {
+        alert(msg);
+    }
+
 };
     function sendToStockfish(command) {
     console.log(">>>", command);
