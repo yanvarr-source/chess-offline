@@ -6,6 +6,10 @@ stockfish.postMessage("ucinewgame");
 
 stockfish.onmessage = function(event) {
     console.log(event.data);
+    function sendToStockfish(command) {
+    console.log(">>>", command);
+    stockfish.postMessage(command);
+}
 };
 function getAllMoves(color) {
     const moves = [];
@@ -89,3 +93,8 @@ function computerMove() {
 
     drawBoard();
 }
+function testStockfish() {
+    sendToStockfish("position startpos");
+    sendToStockfish("go depth 10");
+}
+testStockfish();
