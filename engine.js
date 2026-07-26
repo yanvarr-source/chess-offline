@@ -90,20 +90,11 @@ function getAllMoves(color) {
 }
 
 function computerMove() {
+
     sendToStockfish("position startpos");
-sendToStockfish("go depth 10");
-return;
 
-    if (moves.length === 0) return;
+    sendToStockfish("go depth 10");
 
-    
-
-    game[move.toRow][move.toCol] =
-        game[move.fromRow][move.fromCol];
-
-    game[move.fromRow][move.fromCol] = "";
-
-    drawBoard();
 }
  sendToStockfish("uci");
 sendToStockfish("isready");
